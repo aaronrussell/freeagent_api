@@ -1,17 +1,65 @@
 = freeagent_api
 
-Description goes here.
+Simple Ruby interface to the Freeagent Central API (http://www.freeagentcentral.com/developers/freeagent-api).
 
-== Note on Patches/Pull Requests
+This is an early development version of a Ruby wrapper for the Freeagent API. Currently this only supports GET requests (POST will follow shortly) and only the following API methods are supported (more will follow):
+
+* Contacts
+* Invoices
+* Invoice items
+* Projects
+* Tasks
+* Timeslips
+
+There is no test suite yet. If you feel brave, then feel free to clone, fork and play around.
+
+== Installation
+
+To install as a Gem, just run:
+
+  $ sudo gem install freeagent_api -s http://gemcutter.org
+
+== Usage
+
+=== Authentication
+
+  Lighthouse.domain = 'yourdomain.freeagentcentral.com'
+  Lighthouse.username = 'your@login.com'
+  Lighthouse.password = 'your_password'
+
+=== Contacts
+
+  @contacts = Contact.find_all                # returns all contacts
+  @contact = Contact.find(contact_id)         # returns specific contact
+
+=== Invoice
+
+  @invoices = Invoice.find_all                # returns all invoices
+  @invoices = Invoice.find_all(project_id)    # returns all invoices for project
+  @invoice = Invoice.find(invoice_id)         # returns specific invoice
+
+=== Invoice items
+
+  @items  = InvoiceItem.find_all(invoice_id)  # returns all items for invoice
+
+=== Projects
+
+  @projects = Project.find_all                # returns all projects
+  @project = Project.find(project_id)         # returns specific project
+
+=== Tasks
+
+  @task = Task.find(project_id, task_id)      # returns specific task for project
+
+=== Timeslips
+
+  @timeslips = Timeslip.find_all              # returns all timeslips
+  @timeslips = Timeslip.find_all(project_id)  # returns all timeslips for project
+  @timeslip = Timeslip.find(timeslip_id)      # returns specific timeslip
+
+== Author
  
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but
-   bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+* Aaron Russell - (www.aaronrussell.co.uk)
 
 == Copyright
 
