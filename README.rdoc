@@ -23,9 +23,9 @@ To install as a Gem, just run:
 
 === Authentication
 
-  Lighthouse.domain = 'yourdomain.freeagentcentral.com'
-  Lighthouse.username = 'your@login.com'
-  Lighthouse.password = 'your_password'
+  Freeagent.domain = 'yourdomain.freeagentcentral.com'
+  Freeagent.username = 'your@login.com'
+  Freeagent.password = 'your_password'
 
 === Contacts
 

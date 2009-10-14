@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'nokogiri'
 require 'net/https'
 require 'api_cache'

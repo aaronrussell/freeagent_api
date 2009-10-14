@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "freeagent_api"
-    gem.summary = %Q{Simple Ruby wrapper for the Freeagent Central API.}
-    gem.description = %Q{Simple Ruby wrapper for the Freeagent Central API.}
+    gem.summary = %Q{Simple Ruby interface to the Freeagent Central API.}
+    gem.description = %Q{This is an early development version of a Ruby wrapper for the Freeagent API. Currently this only supports GET requests (POST will follow shortly) and not all API methods are currently supported (more will follow).}
     gem.email = "aaron@gc4.co.uk"
     gem.homepage = "http://github.com/aaronrussell/freeagent_api"
     gem.authors = ["Aaron Russell"]
