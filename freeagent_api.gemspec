@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "freeagent_api.gemspec",
      "lib/freeagent_api.rb",
      "test/freeagent_api_test.rb",
      "test/test_helper.rb"
