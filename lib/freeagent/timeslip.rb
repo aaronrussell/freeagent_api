@@ -24,4 +24,4 @@ module Freeagent
     end
   end
 
-module Freeagent
+end
