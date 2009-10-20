@@ -1,0 +1,22 @@
+HTTP/1.1 200 OK
+Status: 200
+Content-Type: application/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <billing-basis type="decimal">7.5</billing-basis>
+  <budget type="integer">0</budget>
+  <budget-units>Hours</budget-units>
+  <contact-id type="integer">27314</contact-id>
+  <contract-po-reference></contract-po-reference>
+  <created-at type="datetime">2009-08-26T17:11:22Z</created-at>
+  <ends-on type="datetime" nil="true"></ends-on>
+  <id type="integer">17820</id>
+  <is-ir35 type="boolean">false</is-ir35>
+  <name>Ecommerce web development</name>
+  <normal-billing-rate type="decimal">200.0</normal-billing-rate>
+  <starts-on type="datetime" nil="true"></starts-on>
+  <status>Active</status>
+  <updated-at type="datetime">2009-08-26T17:11:22Z</updated-at>
+  <uses-project-invoice-sequence type="boolean">false</uses-project-invoice-sequence>
+</project>

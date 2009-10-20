@@ -1,0 +1,92 @@
+HTTP/1.1 200 OK
+Status: 200
+Content-Type: application/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?>
+<projects type="array">
+  <project>
+    <billing-basis type="decimal">7.5</billing-basis>
+    <budget type="integer">0</budget>
+    <budget-units>Hours</budget-units>
+    <contact-id type="integer">27314</contact-id>
+    <contract-po-reference></contract-po-reference>
+    <created-at type="datetime">2009-08-26T17:11:22Z</created-at>
+    <ends-on type="datetime" nil="true"></ends-on>
+    <id type="integer">17820</id>
+    <is-ir35 type="boolean">false</is-ir35>
+    <name>Ecommerce web development</name>
+    <normal-billing-rate type="decimal">200.0</normal-billing-rate>
+    <starts-on type="datetime" nil="true"></starts-on>
+    <status>Active</status>
+    <updated-at type="datetime">2009-08-26T17:11:22Z</updated-at>
+    <uses-project-invoice-sequence type="boolean">false</uses-project-invoice-sequence>
+  </project>
+  <project>
+    <billing-basis type="decimal">1.0</billing-basis>
+    <budget type="integer">8</budget>
+    <budget-units>Hours</budget-units>
+    <contact-id type="integer">27317</contact-id>
+    <contract-po-reference></contract-po-reference>
+    <created-at type="datetime">2009-10-09T09:53:29Z</created-at>
+    <ends-on type="datetime">2009-12-01T00:00:00Z</ends-on>
+    <id type="integer">20601</id>
+    <is-ir35 type="boolean">false</is-ir35>
+    <name>Website multi-lingual support</name>
+    <normal-billing-rate type="decimal">35.0</normal-billing-rate>
+    <starts-on type="datetime">2009-11-30T00:00:00Z</starts-on>
+    <status>Active</status>
+    <updated-at type="datetime">2009-10-09T10:53:21Z</updated-at>
+    <uses-project-invoice-sequence type="boolean">false</uses-project-invoice-sequence>
+  </project>
+  <project>
+    <billing-basis type="decimal">1.0</billing-basis>
+    <budget type="integer">0</budget>
+    <budget-units>Hours</budget-units>
+    <contact-id type="integer">27318</contact-id>
+    <contract-po-reference></contract-po-reference>
+    <created-at type="datetime">2009-10-20T08:47:31Z</created-at>
+    <ends-on type="datetime" nil="true"></ends-on>
+    <id type="integer">21356</id>
+    <is-ir35 type="boolean">false</is-ir35>
+    <name>Ongoing design and maintenance work</name>
+    <normal-billing-rate type="decimal">30.0</normal-billing-rate>
+    <starts-on type="datetime" nil="true"></starts-on>
+    <status>Active</status>
+    <updated-at type="datetime">2009-10-20T08:47:31Z</updated-at>
+    <uses-project-invoice-sequence type="boolean">false</uses-project-invoice-sequence>
+  </project>
+  <project>
+    <billing-basis type="decimal">1.0</billing-basis>
+    <budget type="integer">61</budget>
+    <budget-units>Hours</budget-units>
+    <contact-id type="integer">30530</contact-id>
+    <contract-po-reference></contract-po-reference>
+    <created-at type="datetime">2009-10-09T10:00:52Z</created-at>
+    <ends-on type="datetime">2009-12-01T00:00:00Z</ends-on>
+    <id type="integer">20602</id>
+    <is-ir35 type="boolean">false</is-ir35>
+    <name>Website redesign and redevelopment</name>
+    <normal-billing-rate type="decimal">35.0</normal-billing-rate>
+    <starts-on type="datetime">2009-10-26T00:00:00Z</starts-on>
+    <status>Active</status>
+    <updated-at type="datetime">2009-10-09T10:39:08Z</updated-at>
+    <uses-project-invoice-sequence type="boolean">false</uses-project-invoice-sequence>
+  </project>
+  <project>
+    <billing-basis type="decimal">1.0</billing-basis>
+    <budget type="integer">34</budget>
+    <budget-units>Hours</budget-units>
+    <contact-id type="integer">30530</contact-id>
+    <contract-po-reference></contract-po-reference>
+    <created-at type="datetime">2009-10-09T10:15:26Z</created-at>
+    <ends-on type="datetime">2010-01-12T00:00:00Z</ends-on>
+    <id type="integer">20603</id>
+    <is-ir35 type="boolean">false</is-ir35>
+    <name>Single page product mini sites</name>
+    <normal-billing-rate type="decimal">35.0</normal-billing-rate>
+    <starts-on type="datetime">2009-12-08T00:00:00Z</starts-on>
+    <status>Active</status>
+    <updated-at type="datetime">2009-10-09T10:59:29Z</updated-at>
+    <uses-project-invoice-sequence type="boolean">false</uses-project-invoice-sequence>
+  </project>
+</projects>
