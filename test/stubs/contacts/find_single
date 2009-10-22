@@ -1,0 +1,29 @@
+HTTP/1.1 200 OK
+Status: 200
+Content-Type: application/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?>
+<contact>
+  <address1>Address 1</address1>
+  <address2>Address 2</address2>
+  <address3>Address 3</address3>
+  <charge-sales-tax type="integer">-1</charge-sales-tax>
+  <contact-name-on-invoices type="boolean">true</contact-name-on-invoices>
+  <country>United Kingdom</country>
+  <created-at type="datetime">2009-08-26T17:02:43Z</created-at>
+  <email>email@address.co.uk</email>
+  <first-name>Fred</first-name>
+  <id type="integer">27309</id>
+  <last-name>Bloggs</last-name>
+  <locale>en</locale>
+  <mobile nil="true"></mobile>
+  <organisation-name>Organisation Name</organisation-name>
+  <phone-number>01234 567890</phone-number>
+  <postcode>BS1 2AW</postcode>
+  <region></region>
+  <sales-tax-registration-number nil="true"></sales-tax-registration-number>
+  <town>Bristol</town>
+  <updated-at type="datetime">2009-08-26T17:02:43Z</updated-at>
+  <uploaded-at type="datetime">2009-08-26T17:02:43Z</uploaded-at>
+  <uses-contact-invoice-sequence type="boolean">false</uses-contact-invoice-sequence>
+</contact>

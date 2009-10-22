@@ -1,0 +1,28 @@
+HTTP/1.1 200 OK
+Status: 200
+Content-Type: application/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?>
+<timeline-items type="array">
+  <timeline_item>
+    <description>Corporation Tax, year ending 05 Apr 07*</description>
+    <nature>Submission Due</nature>
+    <dated_on>Sat Apr 05 00:00:00 UTC 2008</dated_on>
+    <amount_due></amount_due>
+    <is_personal>false</is_personal>
+  </timeline_item>
+  <timeline_item>
+    <description>Corporation Tax, year ending 05 Apr 08*</description>
+    <nature>Payment Due</nature>
+    <dated_on>Tue Jan 06 00:00:00 UTC 2009</dated_on>
+    <amount_due>190.14</amount_due>
+    <is_personal>false</is_personal>
+  </timeline_item>
+  <timeline_item>
+    <description>Corporation Tax, year ending 05 Apr 08*</description>
+    <nature>Submission Due</nature>
+    <dated_on>Sun Apr 05 00:00:00 UTC 2009</dated_on>
+    <amount_due></amount_due>
+    <is_personal>false</is_personal>
+  </timeline_item>
+</timeline-items>

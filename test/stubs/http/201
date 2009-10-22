@@ -1,0 +1,4 @@
+HTTP/1.1 201 Created
+Location: https://testuser.freeagentcentral.com/contacts/34476
+Status: 201
+Content-Type: application/xml; charset=utf-8

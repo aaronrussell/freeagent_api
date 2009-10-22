@@ -24,13 +24,41 @@ end
 
 def fake_it_all
   FakeWeb.clean_registry
-  fakes = {
-    "/projects.xml"     => File.join('projects', 'get'),
-    "/projects/17820.xml"   => File.join('projects', 'get_17820')
-  }
-  fakes.each do |path, stub|
-    FakeWeb.register_uri(:get, 'https://testuser:testpass@testuser.freeagentcentral.com'+path, :response => stub_file(stub))
+  
+  site_url = 'https://testuser:testpass@testuser.freeagentcentral.com'
+  
+  # GET URLs
+  { '/company/invoice_timeline.xml' => File.join('company', 'invoice_timeline'),
+    '/company/tax_timeline.xml'     => File.join('company', 'tax_timeline'),
+    '/contacts.xml'                 => File.join('contacts', 'find_all'),
+    '/contacts/27309.xml'           => File.join('contacts', 'find_single'),
+    '/projects.xml'                 => File.join('projects', 'find_all'),
+    '/projects/17820.xml'           => File.join('projects', 'find_single')
+  }.each do |path, stub|
+    FakeWeb.register_uri(:get, site_url+path, :response => stub_file(stub))
   end
+  
+  # POST URLs
+  { '/contacts.xml'                 => File.join('http', '201'),
+    '/projects.xml'                 => File.join('http', '201')
+  }.each do |path, stub|
+    FakeWeb.register_uri(:post, site_url+path, :response => stub_file(stub))
+  end
+  
+  # PUT URLs
+  { '/contacts/27309.xml'           => File.join('http', '200'),
+    '/projects/17820.xml'           => File.join('http', '200')
+  }.each do |path, stub|
+    FakeWeb.register_uri(:put, site_url+path, :response => stub_file(stub))
+  end
+  
+  # DELETE URLs
+  { '/contacts/27309.xml'           => File.join('http', '200'),
+    '/projects/17820.xml'           => File.join('http', '200')
+  }.each do |path, stub|
+    FakeWeb.register_uri(:delete, site_url+path, :response => stub_file(stub))
+  end
+
 end
 
 class Test::Unit::TestCase

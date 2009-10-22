@@ -17,6 +17,24 @@ module Freeagent
     end
   end
   
+  # Company.invoice_timeline
+  # Company.tax_timeline
+  
+  class Company
+    def self.invoice_timeline
+      InvoiceTimeline.find :all, :from => '/company/invoice_timeline.xml'
+    end
+    def self.tax_timeline
+      TaxTimeline.find :all, :from => '/company/tax_timeline.xml'
+    end
+  end
+  class InvoiceTimeline < Base
+    self.prefix = '/company/'
+  end
+  class TaxTimeline < Base
+    self.prefix = '/company/'
+  end
+  
   # Find contacts
   #
   #   Contact.find :all         # find all contacts
@@ -45,6 +63,7 @@ module Freeagent
   #
   
   class Contact < Base
+    
   end
   
   # Find projects
@@ -175,16 +194,19 @@ module Freeagent
     
   end
   
-#  class ActiveResource::Connection
-#   def http
-#     http = Net::HTTP.new(@site.host, @site.port)
-#     http.use_ssl = @site.is_a?(URI::HTTPS)
-#     http.verify_mode = OpenSSL::SSL::VERIFY_NONE if http.use_ssl
-#     http.read_timeout = @timeout if @timeout
-#     #Here's the addition that allows you to see the output
-#     http.set_debug_output $stderr
-#     return http
-#   end
-#  end
+  ####################################################################################
+  
+  
+  class ActiveResource::Connection
+   def http
+     http = Net::HTTP.new(@site.host, @site.port)
+     http.use_ssl = @site.is_a?(URI::HTTPS)
+     http.verify_mode = OpenSSL::SSL::VERIFY_NONE if http.use_ssl
+     http.read_timeout = @timeout if @timeout
+     #Here's the addition that allows you to see the output
+     http.set_debug_output $stderr
+     return http
+   end
+  end
 
 end

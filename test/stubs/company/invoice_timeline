@@ -1,0 +1,91 @@
+HTTP/1.1 200 OK
+Status: 200
+Content-Type: application/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?>
+<invoice-timeline-items type="array">
+  <invoice_timeline_item>
+    <reference>INV0024</reference>
+    <summary>Payment: INV0024: &#163;155.00 received</summary>
+    <description>Spectrum Healthcare</description>
+    <dated_on>2009-07%dT00:00Z</dated_on>
+    <amount>155.0</amount>
+  </invoice_timeline_item>
+  <invoice_timeline_item>
+    <reference>INV0025</reference>
+    <summary>Payment: INV0025: &#163;2,420.00 received</summary>
+    <description>The Good Folk</description>
+    <dated_on>2009-07%dT00:00Z</dated_on>
+    <amount>2420.0</amount>
+  </invoice_timeline_item>
+  <invoice_timeline_item>
+    <reference>INV0026</reference>
+    <summary>Payment: INV0026: &#163;1,000.00 received</summary>
+    <description>Spectrum Healthcare</description>
+    <dated_on>2009-08%dT00:00Z</dated_on>
+    <amount>1000.0</amount>
+  </invoice_timeline_item>
+  <invoice_timeline_item>
+    <reference>INV0027</reference>
+    <summary>Payment: INV0027: &#163;2,275.00 received</summary>
+    <description>Economic and Social Research Council</description>
+    <dated_on>2009-08%dT00:00Z</dated_on>
+    <amount>2275.0</amount>
+  </invoice_timeline_item>
+  <invoice_timeline_item>
+    <reference>INV0028</reference>
+    <summary>Payment: INV0028: &#163;80.00 received</summary>
+    <description>The Good Folk</description>
+    <dated_on>2009-08%dT00:00Z</dated_on>
+    <amount>80.0</amount>
+  </invoice_timeline_item>
+  <invoice_timeline_item>
+    <reference>INV0029</reference>
+    <summary>Payment: INV0029: &#163;1,012.50 received</summary>
+    <description>Spectrum Healthcare</description>
+    <dated_on>2009-09%dT00:00Z</dated_on>
+    <amount>1012.5</amount>
+  </invoice_timeline_item>
+  <invoice_timeline_item>
+    <reference>INV0031</reference>
+    <summary>Payment: INV0031: &#163;70.00 received</summary>
+    <description>Economic and Social Research Council</description>
+    <dated_on>2009-09%dT00:00Z</dated_on>
+    <amount>70.0</amount>
+  </invoice_timeline_item>
+  <invoice_timeline_item>
+    <reference>INV0032</reference>
+    <summary>Payment: INV0032: &#163;1,920.00 received</summary>
+    <description>icomplete</description>
+    <dated_on>2009-09%dT00:00Z</dated_on>
+    <amount>1920.0</amount>
+  </invoice_timeline_item>
+  <invoice_timeline_item>
+    <reference>INV0033</reference>
+    <summary>Payment: INV0033: &#163;3,000.00 received</summary>
+    <description>Inbox Digital: Shop Direct NDR Webapp</description>
+    <dated_on>2009-10%dT00:00Z</dated_on>
+    <amount>3000.0</amount>
+  </invoice_timeline_item>
+  <invoice_timeline_item>
+    <reference>INV0030</reference>
+    <summary>Due: INV0030: &#163;50.00</summary>
+    <description>Oxfordshire PTC</description>
+    <dated_on>2009-09%dT00:00Z</dated_on>
+    <amount>50.0</amount>
+  </invoice_timeline_item>
+  <invoice_timeline_item>
+    <reference>INV0034</reference>
+    <summary>Due: INV0034: &#163;670.00</summary>
+    <description>The Good Folk</description>
+    <dated_on>2009-10%dT00:00Z</dated_on>
+    <amount>670.0</amount>
+  </invoice_timeline_item>
+  <invoice_timeline_item>
+    <reference>INV0035</reference>
+    <summary>Due: INV0035: &#163;500.00</summary>
+    <description>ClubBuzz: ClubBuzz application design and development</description>
+    <dated_on>2009-10%dT00:00Z</dated_on>
+    <amount>500.0</amount>
+  </invoice_timeline_item>
+</invoice-timeline-items>
