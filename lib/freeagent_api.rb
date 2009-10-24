@@ -63,7 +63,6 @@ module Freeagent
   #
   
   class Contact < Base
-    
   end
   
   # Find projects
@@ -114,7 +113,6 @@ module Freeagent
   
   # Find invoices
   #
-  #   Invoice.find :all
   #   Invoice.find :all, :params => {:project_id => project_id}
   #   Invoice.find task_id
   #   
@@ -131,13 +129,7 @@ module Freeagent
 
   
   class Invoice < Base
-  
-    def self.find(*args)
-      opts = args.slice!(1) || {}
-      self.prefix = "/projects/#{opts[:params][:project_id]}/" if opts[:params] && opts[:params][:project_id]
-      super
-    end
-    
+    self.prefix = '/projects/:project_id/'
   end
   
   # Find invoice items

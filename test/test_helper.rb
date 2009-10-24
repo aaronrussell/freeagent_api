@@ -33,7 +33,8 @@ def fake_it_all
     '/contacts.xml'                 => File.join('contacts', 'find_all'),
     '/contacts/27309.xml'           => File.join('contacts', 'find_single'),
     '/projects.xml'                 => File.join('projects', 'find_all'),
-    '/projects/17820.xml'           => File.join('projects', 'find_single')
+    '/projects/17820.xml'           => File.join('projects', 'find_single'),
+    '/projects/17820/invoices.xml'  => File.join('invoices', 'find_all')
   }.each do |path, stub|
     FakeWeb.register_uri(:get, site_url+path, :response => stub_file(stub))
   end
