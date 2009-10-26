@@ -63,5 +63,44 @@ class ProjectTest < Test::Unit::TestCase
     end
   end
   
+  context "Nested Invoices" do
+    setup do
+      @project = Project.find 17820
+      @invoices = @project.invoices
+      @invoice = @invoices.first
+    end
+    should "be Invoices" do
+      assert @invoices.is_a? Array
+      assert_equal 1, @invoices.size
+      assert @invoices.first.is_a? Invoice
+    end
+    should "be updateable" do
+      @invoice.comments = "This is a test comment"
+      assert @invoice.save
+    end
+    should "be deletable" do
+      assert @invoice.destroy
+    end
+  end
+  
+  context "Nested Timeslips" do
+    setup do
+      @project = Project.find 17820
+      @timeslips = @project.timeslips
+      @timeslip = @timeslips.first
+    end
+    should "be Timeslips" do
+      assert @timeslips.is_a? Array
+      assert_equal 24, @timeslips.size
+      assert @timeslips.first.is_a? Timeslip
+    end
+    should "be updateable" do
+      @timeslip.hours = '1'
+      assert @timeslip.save
+    end
+    should "be deletable" do
+      assert @timeslip.destroy
+    end
+  end
     
 end

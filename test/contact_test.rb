@@ -52,10 +52,10 @@ class ContactTest < Test::Unit::TestCase
         :first_name => 'Fred',
         :last_name  => 'Bloggs'
       }
-      @new_contact = Contact.new params
+      @contact = Contact.new params
     end
     should "validate and save" do
-      assert @new_contact.save_with_validation
+      assert @contact.save_with_validation
     end
   end
     

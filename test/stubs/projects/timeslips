@@ -1,0 +1,223 @@
+HTTP/1.1 200 OK
+Status: 200
+Content-Type: application/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?>
+<timeslips type="array">
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-09-09T00:00:00Z</dated-on>
+    <hours type="decimal">3.75</hours>
+    <id type="integer">74814</id>
+    <task-id type="integer">13161</task-id>
+    <updated-at type="datetime">2009-09-14T19:56:37Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-09-09T00:00:00Z</dated-on>
+    <hours type="decimal">3.75</hours>
+    <id type="integer">74815</id>
+    <task-id type="integer">12684</task-id>
+    <updated-at type="datetime">2009-09-14T19:56:37Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-09-10T00:00:00Z</dated-on>
+    <hours type="decimal">3.75</hours>
+    <id type="integer">75967</id>
+    <task-id type="integer">12683</task-id>
+    <updated-at type="datetime">2009-09-14T19:56:36Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-09-10T00:00:00Z</dated-on>
+    <hours type="decimal">3.75</hours>
+    <id type="integer">75966</id>
+    <task-id type="integer">13161</task-id>
+    <updated-at type="datetime">2009-09-14T19:56:37Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-09-11T00:00:00Z</dated-on>
+    <hours type="decimal">7.5</hours>
+    <id type="integer">75968</id>
+    <task-id type="integer">13161</task-id>
+    <updated-at type="datetime">2009-09-14T19:56:37Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-09-14T00:00:00Z</dated-on>
+    <hours type="decimal">7.5</hours>
+    <id type="integer">76010</id>
+    <task-id type="integer">13161</task-id>
+    <updated-at type="datetime">2009-09-14T22:33:55Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-09-15T00:00:00Z</dated-on>
+    <hours type="decimal">3.75</hours>
+    <id type="integer">76292</id>
+    <task-id type="integer">13161</task-id>
+    <updated-at type="datetime">2009-09-15T20:13:10Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-09-16T00:00:00Z</dated-on>
+    <hours type="decimal">7.5</hours>
+    <id type="integer">78004</id>
+    <task-id type="integer">12683</task-id>
+    <updated-at type="datetime">2009-09-20T11:39:39Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-09-17T00:00:00Z</dated-on>
+    <hours type="decimal">7.5</hours>
+    <id type="integer">78005</id>
+    <task-id type="integer">12683</task-id>
+    <updated-at type="datetime">2009-09-20T11:39:47Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-09-18T00:00:00Z</dated-on>
+    <hours type="decimal">7.5</hours>
+    <id type="integer">78006</id>
+    <task-id type="integer">12683</task-id>
+    <updated-at type="datetime">2009-09-20T11:39:55Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-09-21T00:00:00Z</dated-on>
+    <hours type="decimal">7.5</hours>
+    <id type="integer">78793</id>
+    <task-id type="integer">12683</task-id>
+    <updated-at type="datetime">2009-09-22T15:52:37Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-09-22T00:00:00Z</dated-on>
+    <hours type="decimal">3.75</hours>
+    <id type="integer">78794</id>
+    <task-id type="integer">12683</task-id>
+    <updated-at type="datetime">2009-09-22T15:52:46Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-09-23T00:00:00Z</dated-on>
+    <hours type="decimal">7.5</hours>
+    <id type="integer">79115</id>
+    <task-id type="integer">12683</task-id>
+    <updated-at type="datetime">2009-09-23T19:12:53Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-09-24T00:00:00Z</dated-on>
+    <hours type="decimal">7.5</hours>
+    <id type="integer">79691</id>
+    <task-id type="integer">12683</task-id>
+    <updated-at type="datetime">2009-09-24T18:58:44Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-09-25T00:00:00Z</dated-on>
+    <hours type="decimal">7.5</hours>
+    <id type="integer">80083</id>
+    <task-id type="integer">12684</task-id>
+    <updated-at type="datetime">2009-09-25T17:45:32Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-09-28T00:00:00Z</dated-on>
+    <hours type="decimal">7.5</hours>
+    <id type="integer">82076</id>
+    <task-id type="integer">12684</task-id>
+    <updated-at type="datetime">2009-10-01T18:59:36Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-09-29T00:00:00Z</dated-on>
+    <hours type="decimal">3.75</hours>
+    <id type="integer">82077</id>
+    <task-id type="integer">12684</task-id>
+    <updated-at type="datetime">2009-10-01T18:59:44Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-09-29T00:00:00Z</dated-on>
+    <hours type="decimal">3.75</hours>
+    <id type="integer">82078</id>
+    <task-id type="integer">12683</task-id>
+    <updated-at type="datetime">2009-10-01T18:59:55Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-09-30T00:00:00Z</dated-on>
+    <hours type="decimal">7.5</hours>
+    <id type="integer">82079</id>
+    <task-id type="integer">12683</task-id>
+    <updated-at type="datetime">2009-10-01T19:00:08Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-10-01T00:00:00Z</dated-on>
+    <hours type="decimal">7.5</hours>
+    <id type="integer">82080</id>
+    <task-id type="integer">12683</task-id>
+    <updated-at type="datetime">2009-10-01T19:00:15Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-10-02T00:00:00Z</dated-on>
+    <hours type="decimal">7.5</hours>
+    <id type="integer">82575</id>
+    <task-id type="integer">12684</task-id>
+    <updated-at type="datetime">2009-10-04T00:47:46Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-10-05T00:00:00Z</dated-on>
+    <hours type="decimal">7.5</hours>
+    <id type="integer">84445</id>
+    <task-id type="integer">12683</task-id>
+    <updated-at type="datetime">2009-10-08T15:29:30Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-10-06T00:00:00Z</dated-on>
+    <hours type="decimal">7.5</hours>
+    <id type="integer">84446</id>
+    <task-id type="integer">15291</task-id>
+    <updated-at type="datetime">2009-10-08T15:29:47Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+  <timeslip>
+    <comment></comment>
+    <dated-on type="datetime">2009-10-08T00:00:00Z</dated-on>
+    <hours type="decimal">3.75</hours>
+    <id type="integer">84447</id>
+    <task-id type="integer">12683</task-id>
+    <updated-at type="datetime">2009-10-08T15:29:59Z</updated-at>
+    <user-id type="integer">5193</user-id>
+  </timeslip>
+</timeslips>

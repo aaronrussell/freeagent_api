@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Status: 200
+Content-Type: application/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?>
+<timeslip>
+  <comment></comment>
+  <dated-on type="datetime">2009-10-05T00:00:00Z</dated-on>
+  <hours type="decimal">7.5</hours>
+  <id type="integer">84445</id>
+  <task-id type="integer">12683</task-id>
+  <updated-at type="datetime">2009-10-08T15:29:30Z</updated-at>
+  <user-id type="integer">5193</user-id>
+</timeslip>

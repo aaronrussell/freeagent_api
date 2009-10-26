@@ -1,0 +1,92 @@
+HTTP/1.1 200 OK
+Status: 200
+Content-Type: application/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?>
+<invoices type="array">
+  <invoice>
+    <id type="integer">66913</id>
+    <company-id type="integer">3795</company-id>
+    <project-id type="integer">17820</project-id>
+    <contact-id type="integer">27314</contact-id>
+    <dated-on type="datetime">2009-09-14T00:00:00Z</dated-on>
+    <due-on type="datetime">2009-09-28T00:00:00Z</due-on>
+    <reference>INV033</reference>
+    <net-value type="decimal">3000.0</net-value>
+    <sales-tax-value type="decimal">0.0</sales-tax-value>
+    <status>Paid</status>
+    <comments></comments>
+    <discount-percent type="decimal"></discount-percent>
+    <omit-header type="boolean">false</omit-header>
+    <payment-terms-in-days type="integer">14</payment-terms-in-days>
+    <written-off-date type="datetime"></written-off-date>
+    <invoice-items type="array">
+      <invoice-item>
+        <description>Back end development</description>
+        <id type="integer">153069</id>
+        <invoice-id type="integer">66913</invoice-id>
+        <item-type>Days</item-type>
+        <price type="decimal">200.0</price>
+        <project-id type="integer" nil="true"></project-id>
+        <quantity type="decimal">2.5</quantity>
+        <sales-tax-rate type="decimal">0.0</sales-tax-rate>
+        <second-sales-tax-rate type="decimal">0.0</second-sales-tax-rate>
+      </invoice-item>
+      <invoice-item>
+        <description>Briefing and research</description>
+        <id type="integer">153070</id>
+        <invoice-id type="integer">66913</invoice-id>
+        <item-type>Days</item-type>
+        <price type="decimal">200.0</price>
+        <project-id type="integer" nil="true"></project-id>
+        <quantity type="decimal">1.0</quantity>
+        <sales-tax-rate type="decimal">0.0</sales-tax-rate>
+        <second-sales-tax-rate type="decimal">0.0</second-sales-tax-rate>
+      </invoice-item>
+      <invoice-item>
+        <description>Front end development</description>
+        <id type="integer">153071</id>
+        <invoice-id type="integer">66913</invoice-id>
+        <item-type>Days</item-type>
+        <price type="decimal">200.0</price>
+        <project-id type="integer" nil="true"></project-id>
+        <quantity type="decimal">3.5</quantity>
+        <sales-tax-rate type="decimal">0.0</sales-tax-rate>
+        <second-sales-tax-rate type="decimal">0.0</second-sales-tax-rate>
+      </invoice-item>
+      <invoice-item>
+        <description>Game website development</description>
+        <id type="integer">153072</id>
+        <invoice-id type="integer">66913</invoice-id>
+        <item-type>Days</item-type>
+        <price type="decimal">200.0</price>
+        <project-id type="integer" nil="true"></project-id>
+        <quantity type="decimal">2.0</quantity>
+        <sales-tax-rate type="decimal">0.0</sales-tax-rate>
+        <second-sales-tax-rate type="decimal">0.0</second-sales-tax-rate>
+      </invoice-item>
+      <invoice-item>
+        <description>Mobile website development</description>
+        <id type="integer">153073</id>
+        <invoice-id type="integer">66913</invoice-id>
+        <item-type>Days</item-type>
+        <price type="decimal">200.0</price>
+        <project-id type="integer" nil="true"></project-id>
+        <quantity type="decimal">5.0</quantity>
+        <sales-tax-rate type="decimal">0.0</sales-tax-rate>
+        <second-sales-tax-rate type="decimal">0.0</second-sales-tax-rate>
+      </invoice-item>
+      <invoice-item>
+        <description>Photographic website development</description>
+        <id type="integer">153074</id>
+        <invoice-id type="integer">66913</invoice-id>
+        <item-type>Days</item-type>
+        <price type="decimal">200.0</price>
+        <project-id type="integer" nil="true"></project-id>
+        <quantity type="decimal">1.0</quantity>
+        <sales-tax-rate type="decimal">0.0</sales-tax-rate>
+        <second-sales-tax-rate type="decimal">0.0</second-sales-tax-rate>
+      </invoice-item>
+    </invoice-items>
+  </invoice>
+</invoices>

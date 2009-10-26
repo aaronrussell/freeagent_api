@@ -46,7 +46,7 @@ module Freeagent
   #     :first_name
   #     :last_name
   #
-  #   contact = Contact.new :first_name => 'Joe', :last_name => 'Bloggs'
+  #   contact = Contact.new params
   #   contact.save
   #
   # Update contact
@@ -98,107 +98,59 @@ module Freeagent
   class Project < Base
 
     def invoices
-      Invoice.find :all, :params => {:project_id => id}
+      Invoice.find :all, :from => "/projects/#{id}/invoices.xml"
     end
-    
-    def tasks
-      Task.find :all, :params => {:project_id => id}
-    end
-    
+        
     def timeslips
-      Timeslip.find :all, :params => {:project_id => id}
+      Timeslip.find :all, :from => "/projects/#{id}/timeslips.xml"
     end
 
   end
   
-  # Find invoices
-  #
-  #   Invoice.find :all, :params => {:project_id => project_id}
-  #   Invoice.find task_id
-  #   
-  #TODO Create invoice
-  #
-  #TODO Update invoice
-  #
-  #TODO Delete project
-  #
-  ##TODO add Change status methods
-  # /invoices/invoice_id/mark_as_draft
-  # /invoices/invoice_id/mark_as_sent
-  # /invoices/invoice_id/mark_as_cancelled
-
+  # Tasks - Complete
+  
+  class Task < Base
+    self.prefix = '/projects/:project_id/'        
+  end
+  
+  # Invoices - Complete
   
   class Invoice < Base
-    self.prefix = '/projects/:project_id/'
+    
+    def mark_as_draft
+      connection.put("/invoices/#{id}/mark_as_draft.xml", encode, self.class.headers).tap do |response|
+        load_attributes_from_response(response)
+      end
+    end
+    def mark_as_sent
+      connection.put("/invoices/#{id}/mark_as_sent.xml", encode, self.class.headers).tap do |response|
+        load_attributes_from_response(response)
+      end
+    end
+    def mark_as_cancelled
+      connection.put("/invoices/#{id}/mark_as_cancelled.xml", encode, self.class.headers).tap do |response|
+        load_attributes_from_response(response)
+      end
+    end
+    
   end
   
-  # Find invoice items
-  #
-  #   InvoiceItem.find :all, :params => {:invoice_id => invoice_id}
-  #   InvoiceItem.find invoice_item_id, :params => {:invoice_id => invoice_id}
-  #
-  #TODO Create invoice item
-  #
+  # Invoice items - Complete
   
   class InvoiceItem < Base
     self.prefix = '/invoices/:invoice_id/'
   end
-  
-  # Find tasks
-  #
-  #   Task.find :all
-  #   Task.find :all, :params => {:project_id => project_id}
-  #   Task.find task_id
-  #
-  #TODO Create task
-  #
-  #TODO Update task
-  #
-  #TODO Delete project
-  #
-  
-  class Task < Base
-    
-    self.prefix = '/projects/:project_id/'
-    
-#    def self.find(*args)
-#      opts = args.slice!(1) || {}
-#      self.prefix = "/projects/#{opts[:params][:project_id]}/" if opts[:params] && opts[:params][:project_id]
-#      super
-#    end
-        
-  end
-  
-  # Find timeslips
-  #
-  #   Timeslip.find :all, :params => {:view => '2009-01-01_2009-10-01'}
-  #   Timeslip.find :all, :params => {:project_id => project_id}
-  #   Timeslip.find :timeslip_id
-  
+
+  # Timeslips
   
   class Timeslip < Base
     
-    def self.find(*args)
-      opts = args.slice!(1) || {}
-      self.prefix = "/projects/#{opts[:params][:project_id]}/" if opts[:params] && opts[:params][:project_id]
-      super
-    end
+#    def self.find(*args)
+#      opts = args.slice(1) || {}
+#      self.prefix = "/projects/#{opts[:params][:project_id]}/" if opts[:params] && opts[:params][:project_id]
+#      super
+#    end
     
-  end
-  
-  ####################################################################################
-  
-  
-  class ActiveResource::Connection
-   def http
-     http = Net::HTTP.new(@site.host, @site.port)
-     http.use_ssl = @site.is_a?(URI::HTTPS)
-     http.verify_mode = OpenSSL::SSL::VERIFY_NONE if http.use_ssl
-     http.read_timeout = @timeout if @timeout
-     #Here's the addition that allows you to see the output
-     http.set_debug_output $stderr
-     return http
-   end
   end
 
 end

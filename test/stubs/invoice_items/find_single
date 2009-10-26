@@ -1,0 +1,15 @@
+HTTP/1.1 200 OK
+Status: 200
+Content-Type: application/xml; charset=utf-8
+
+<invoice-item>
+  <description>1/2 day training session.</description>
+  <id type="integer">169399</id>
+  <invoice-id type="integer">73867</invoice-id>
+  <item-type>Training</item-type>
+  <price type="decimal">350.0</price>
+  <project-id type="integer" nil="true"></project-id>
+  <quantity type="decimal">1.0</quantity>
+  <sales-tax-rate type="decimal">15.0</sales-tax-rate>
+  <second-sales-tax-rate type="decimal">0.0</second-sales-tax-rate>
+</invoice-item>
