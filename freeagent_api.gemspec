@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{freeagent_api}
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Aaron Russell"]
-  s.date = %q{2009-10-14}
-  s.description = %q{This is an early development version of a Ruby wrapper for the Freeagent API. Currently this only supports GET requests (POST will follow shortly) and not all API methods are currently supported (more will follow).}
+  s.date = %q{2009-10-27}
+  s.description = %q{This is an ActiveResource Ruby wrapper for the Freeagent API. Currently supports the following API resources: Company, Contacts, Projects, Tasks, Invoices, Invoice Items, Timeslips (more will follow).}
   s.email = %q{aaron@gc4.co.uk}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -25,17 +25,49 @@ Gem::Specification.new do |s|
      "VERSION",
      "freeagent_api.gemspec",
      "lib/freeagent_api.rb",
-     "test/freeagent_api_test.rb",
-     "test/test_helper.rb"
+     "test/authentication_test.rb",
+     "test/company_test.rb",
+     "test/contact_test.rb",
+     "test/invoice_item_test.rb",
+     "test/invoice_test.rb",
+     "test/project_test.rb",
+     "test/stubs/company/invoice_timeline",
+     "test/stubs/company/tax_timeline",
+     "test/stubs/contacts/find_all",
+     "test/stubs/contacts/find_single",
+     "test/stubs/http/200",
+     "test/stubs/http/201",
+     "test/stubs/invoice_items/find_all",
+     "test/stubs/invoice_items/find_single",
+     "test/stubs/invoices/find_all",
+     "test/stubs/invoices/find_single",
+     "test/stubs/projects/find_all",
+     "test/stubs/projects/find_single",
+     "test/stubs/projects/invoices",
+     "test/stubs/projects/timeslips",
+     "test/stubs/tasks/find_all",
+     "test/stubs/tasks/find_single",
+     "test/stubs/timeslips/find_all",
+     "test/stubs/timeslips/find_single",
+     "test/task_test.rb",
+     "test/test_helper.rb",
+     "test/timeslip_test.rb"
   ]
   s.homepage = %q{http://github.com/aaronrussell/freeagent_api}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
-  s.summary = %q{Simple Ruby interface to the Freeagent Central API.}
+  s.summary = %q{ActiveResource Ruby wrapper for the Freeagent Central API.}
   s.test_files = [
-    "test/freeagent_api_test.rb",
-     "test/test_helper.rb"
+    "test/authentication_test.rb",
+     "test/company_test.rb",
+     "test/contact_test.rb",
+     "test/invoice_item_test.rb",
+     "test/invoice_test.rb",
+     "test/project_test.rb",
+     "test/task_test.rb",
+     "test/test_helper.rb",
+     "test/timeslip_test.rb"
   ]
 
   if s.respond_to? :specification_version then
@@ -44,19 +76,16 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<thoughtbot-shoulda>, [">= 0"])
-      s.add_runtime_dependency(%q<activesupport>, [">= 0"])
-      s.add_runtime_dependency(%q<nokogiri>, [">= 0"])
-      s.add_runtime_dependency(%q<api_cache>, [">= 0"])
+      s.add_development_dependency(%q<fakeweb>, [">= 0"])
+      s.add_runtime_dependency(%q<activeresource>, [">= 0"])
     else
       s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
-      s.add_dependency(%q<activesupport>, [">= 0"])
-      s.add_dependency(%q<nokogiri>, [">= 0"])
-      s.add_dependency(%q<api_cache>, [">= 0"])
+      s.add_dependency(%q<fakeweb>, [">= 0"])
+      s.add_dependency(%q<activeresource>, [">= 0"])
     end
   else
     s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
-    s.add_dependency(%q<activesupport>, [">= 0"])
-    s.add_dependency(%q<nokogiri>, [">= 0"])
-    s.add_dependency(%q<api_cache>, [">= 0"])
+    s.add_dependency(%q<fakeweb>, [">= 0"])
+    s.add_dependency(%q<activeresource>, [">= 0"])
   end
 end
