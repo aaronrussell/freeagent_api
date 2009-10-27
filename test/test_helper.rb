@@ -10,11 +10,10 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'freeagent_api'
 include Freeagent
 
-Freeagent.domain    = 'testuser.freeagentcentral.com'
-Freeagent.username  = 'testuser'
-Freeagent.password  = 'testpass'
-
-Base.authenticate
+Freeagent.authenticate({
+  :domain => 'testuser.freeagentcentral.com',
+  :username => 'testuser',
+  :password => 'testpass'})
 
 FakeWeb.allow_net_connect = false
 

@@ -5,15 +5,14 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "freeagent_api"
-    gem.summary = %Q{Simple Ruby interface to the Freeagent Central API.}
-    gem.description = %Q{This is an early development version of a Ruby wrapper for the Freeagent API. Currently this only supports GET requests (POST will follow shortly) and not all API methods are currently supported (more will follow).}
+    gem.summary = %Q{ActiveResource Ruby wrapper for the Freeagent Central API.}
+    gem.description = %Q{This is an ActiveResource Ruby wrapper for the Freeagent API. Currently supports the following API resources: Company, Contacts, Projects, Tasks, Invoices, Invoice Items, Timeslips (more will follow).}
     gem.email = "aaron@gc4.co.uk"
     gem.homepage = "http://github.com/aaronrussell/freeagent_api"
     gem.authors = ["Aaron Russell"]
     gem.add_development_dependency "thoughtbot-shoulda"
-    gem.add_dependency "activesupport"
-    gem.add_dependency "nokogiri"
-    gem.add_dependency "api_cache"
+    gem.add_development_dependency "fakeweb"
+    gem.add_dependency "activeresource"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new

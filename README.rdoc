@@ -1,17 +1,24 @@
 = freeagent_api
 
-Simple Ruby interface to the Freeagent Central API (http://www.freeagentcentral.com/developers/freeagent-api).
+Simple ActiveResource Ruby wrapper for the Freeagent Central API (http://www.freeagentcentral.com/developers/freeagent-api).
 
-This is an early development version of a Ruby wrapper for the Freeagent API. Currently this only supports GET requests (POST will follow shortly) and only the following API methods are supported (more will follow):
+This supports all GET, POST, PUT and DELETE ActiveResource calls for the following API resources:
 
+* Company
 * Contacts
-* Invoices
-* Invoice items
 * Projects
 * Tasks
+* Invoices
+* Invoice Items
 * Timeslips
 
-There is no test suite yet. If you feel brave, then feel free to clone, fork and play around.
+At the moment, the following API resources are NOT supported (although is being worked on):
+
+* Users
+* Expenses
+* Attachments
+
+Feel free to clone, fork and add tests.
 
 == Installation
 
@@ -19,43 +26,208 @@ To install as a Gem, just run:
 
   $ sudo gem install freeagent_api -s http://gemcutter.org
 
+Please note: version 0.2 is significantly different from 0.1 so if you are upgrading from the early development version please re-familiarise yourself with the documentation.
+
 == Usage
 
 === Authentication
 
-  Freeagent.domain = 'yourdomain.freeagentcentral.com'
-  Freeagent.username = 'your@login.com'
-  Freeagent.password = 'your_password'
+  Freeagent.authenticate({
+    :domain => 'yourdomain.freeagentcentral.com',
+    :username => 'your@login.com',
+    :password => 'your_password'})
+
+=== Company
+
+*Timelines*
+
+  @invoice_timeline = Company.invoice_timeline
+  @tax_timeline = Company.tax_timeline
 
 === Contacts
 
-  @contacts = Contact.find_all                # returns all contacts
-  @contact = Contact.find(contact_id)         # returns specific contact
+*Find contacts*
 
-=== Invoice
+  @contacts = Contact.find :all         # returns all contacts
+  @contact = Contact.find id            # returns specific contact
 
-  @invoices = Invoice.find_all                # returns all invoices
-  @invoices = Invoice.find_all(project_id)    # returns all invoices for project
-  @invoice = Invoice.find(invoice_id)         # returns specific invoice
+*Create contact*
 
-=== Invoice items
+  # Required attributes
+  #   :first_name
+  #   :last_name
+  
+  @contact = Contact.new params
+  @contact.save
 
-  @items  = InvoiceItem.find_all(invoice_id)  # returns all items for invoice
+*Update contact*
+
+  @contact.first_name = 'Joe'
+  @contact.save
+
+*Delete contact*
+
+  Contact.delete id
+  # or
+  @contact.destroy
 
 === Projects
 
-  @projects = Project.find_all                # returns all projects
-  @project = Project.find(project_id)         # returns specific project
+*Find projects*  
+
+  @projects = Project.find :all         # returns all projects
+  @project = Project.find id            # returns specific project
+
+*Create project*
+
+  # Required attribues
+  #   :contact_id
+  #   :name
+  #   :payment_term_in_days
+  #   :billing_basis                    # must be 1, 7, 7.5, or 8
+  #   :budget_units                     # must be Hours, Days, or Monetary
+  #   :status                           # must be Active or Completed
+  
+  @project = Project.new params
+  @project.save
+
+*Update project*
+
+  @project.name = 'Web design project'
+  @project.save
+
+*Delete project*
+
+  Project.delete id
+  # or
+  @project.destroy
+
+*Nested resources*
+
+  @invoices = @project.invoices
+  @timeslips = @project.timeslips
 
 === Tasks
 
-  @task = Task.find(project_id, task_id)      # returns specific task for project
+*Find tasks*
+
+  @tasks = Task.find :all               # returns all tasks
+  @task = Task.find id                  # returns specific task
+
+*Create task*
+
+  # Required attributes
+  #   :name
+  
+  @task = Task.new params
+  @task.save
+
+*Update task*
+
+  @task.name = 'Create wireframes'
+  @task.save
+
+*Delete task*
+
+  Task.delete id
+  # or
+  @task.destroy
+
+=== Invoices
+
+*Find Invoices*
+
+  @invoices = Invoice.find :all         # returns all invoices
+  @invoice = Invoice.find id            # returns specific invoice
+
+*Create invoice*
+
+  # Required attributes
+  #   :contact_id
+  #   :project_id
+  #   :dated_on
+  #   :reference
+  #   :status
+  
+  @invoice = Invoice.new params
+  @invoice.save
+
+*Update invoice*
+
+  @invoice.status = 'Sent'
+  @invoice.save
+
+*Delete invoice*
+
+  Invoice.delete id
+  # or
+  @invoice.destroy
+
+*Changing status*
+
+  @invoice.mark_as_draft
+  @invoice.mark_as_sent
+  @invoice.mark_as_cancelled
+
+=== Invoice items
+
+*Find invoice items*
+
+  @invoice_items = InvoiceItem.find :all  # returns all invoice items
+  @invoice_item = InvoiceItem.find id     # returns specific invoice item
+
+*Create invoice item*
+
+  # Required attributes
+  #   :item_type                        # must be Hours, Days, Months, Years, Products, Services, Expenses, Discount, Credit, Comment
+  #   :description
+  #   :quantity
+  #   :price
+  #   :sales_tax_rate
+  
+  @invoice_item = InvoiceItem.new params
+  @invoice_item.save
+
+*Update invoice item*
+
+  @invoice_item.name = 'Create wireframes'
+  @invoice_item.save
+
+*Delete invoice item*
+
+  InvoiceItem.delete id
+  # or
+  @invoice_item.destroy
 
 === Timeslips
 
-  @timeslips = Timeslip.find_all              # returns all timeslips
-  @timeslips = Timeslip.find_all(project_id)  # returns all timeslips for project
-  @timeslip = Timeslip.find(timeslip_id)      # returns specific timeslip
+*Find timeslips*
+
+  @timeslips = Timeslip.find :all, :params => {:from => '2009-10-01', :to => '2009-10-30'}
+                                        # returns all timeslips (:from and :to dates required)
+  @timeslip = Timeslip.find id          # returns specific timeslip
+
+*Create timeslip*
+
+  # Required attributes
+  #   :user_id
+  #   :hours
+  #   :dated_on
+  #   :task_id OR :new_task
+  
+  @timeslip = Timeslip.new params
+  @timeslip.save
+
+*Update timeslip*
+
+  @timeslip.hours = '3.5'
+  @timeslip.save
+
+*Delete timeslip*
+
+  Timeslip.delete id
+  # or
+  @timeslip.destroy
 
 == Author
  

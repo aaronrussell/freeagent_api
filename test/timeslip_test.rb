@@ -14,7 +14,7 @@ class TimeslipTest < Test::Unit::TestCase
   
   context "Timeslips" do
     setup do
-      @timeslips = Timeslip.find :all, :params => {:view => '2009-10-01_2009-10-10'}
+      @timeslips = Timeslip.find :all, :params => {:from => '2009-10-01', :to => '2009-10-10'}
     end
     should "return an array" do
       assert @timeslips.is_a? Array

@@ -4,22 +4,23 @@ require 'activeresource'
 module Freeagent
   
   class << self
-    attr_accessor :domain, :username, :password
+    def authenticate(options)
+      Base.authenticate(options)
+    end
   end
   
   class Error < StandardError; end
 
   class Base < ActiveResource::Base
-    def self.authenticate
-      self.site = "https://#{Freeagent.domain}"
-      self.user = Freeagent.username
-      self.password = Freeagent.password
+    def self.authenticate(options)
+      self.site = "https://#{options[:domain]}"
+      self.user = options[:username]
+      self.password = options[:password]
     end
   end
   
-  # Company.invoice_timeline
-  # Company.tax_timeline
-  
+  # Company
+    
   class Company
     def self.invoice_timeline
       InvoiceTimeline.find :all, :from => '/company/invoice_timeline.xml'
@@ -35,65 +36,12 @@ module Freeagent
     self.prefix = '/company/'
   end
   
-  # Find contacts
-  #
-  #   Contact.find :all         # find all contacts
-  #   Contact.find contact_id   # find specific contact by ID
-  #
-  # Create contact
-  #
-  #   Required attributes
-  #     :first_name
-  #     :last_name
-  #
-  #   contact = Contact.new params
-  #   contact.save
-  #
-  # Update contact
-  #
-  #   contact = Contact.find contact_id
-  #   contact.first_name = 'Joe'
-  #   contact.last_name = 'Bloggs'
-  #   contact.save
-  #
-  # Delete contact
-  #
-  #   Contact.delete contact_id
-  #   contact.destroy
-  #
+  # Contacts
   
   class Contact < Base
   end
   
-  # Find projects
-  #
-  #   Project.find :all         # find all projects
-  #   Project.find project_id   # find specific project by ID
-  #
-  # Create project
-  #
-  #   Required attributes
-  #     :contact_id
-  #     :name
-  #     :payment_term_in_days
-  #     :billing_basis          # must be 1, 7, 7.5, or 8
-  #     :budget_units           # must be Hours, Days, or Monetary
-  #     :status                 # must be Active or Completed
-  #
-  #   Project = Project.new params
-  #   contact.save
-  #
-  # Update project
-  #
-  #   project = Project.find project_id
-  #   project.name = 'Website redesign and build'
-  #   project.save
-  #
-  # Delete project
-  #
-  #   Project.delete project_id
-  #   project.destroy
-  #
+  # Projects
   
   class Project < Base
 
@@ -145,12 +93,23 @@ module Freeagent
   
   class Timeslip < Base
     
-#    def self.find(*args)
-#      opts = args.slice(1) || {}
-#      self.prefix = "/projects/#{opts[:params][:project_id]}/" if opts[:params] && opts[:params][:project_id]
-#      super
-#    end
-    
+    def self.find(*arguments)
+      scope   = arguments.slice!(0)
+      options = arguments.slice!(0) || {}
+      if options[:params] && options[:params][:from] && options[:params][:to]
+        options[:params][:view] = options[:params][:from]+'_'+options[:params][:to]
+        options[:params].delete(:from)
+        options[:params].delete(:to)
+      end
+
+      case scope
+        when :all   then find_every(options)
+        when :first then find_every(options).first
+        when :last  then find_every(options).last
+        when :one   then find_one(options)
+        else             find_single(scope, options)
+      end
+    end    
   end
 
 end
