@@ -39,19 +39,19 @@ Please note: version 0.2 is significantly different from 0.1 so if you are upgra
 
 === Company
 
-*Timelines*
+<b>Timelines</b>
 
   @invoice_timeline = Company.invoice_timeline
   @tax_timeline = Company.tax_timeline
 
 === Contacts
 
-*Find contacts*
+<b>Find contacts</b>
 
   @contacts = Contact.find :all         # returns all contacts
   @contact = Contact.find id            # returns specific contact
 
-*Create contact*
+<b>Create contact</b>
 
   # Required attributes
   #   :first_name
@@ -60,12 +60,12 @@ Please note: version 0.2 is significantly different from 0.1 so if you are upgra
   @contact = Contact.new params
   @contact.save
 
-*Update contact*
+<b>Update contact</b>
 
   @contact.first_name = 'Joe'
   @contact.save
 
-*Delete contact*
+<b>Delete contact</b>
 
   Contact.delete id
   # or
@@ -73,12 +73,12 @@ Please note: version 0.2 is significantly different from 0.1 so if you are upgra
 
 === Projects
 
-*Find projects*  
+<b>Find projects</b>
 
   @projects = Project.find :all         # returns all projects
   @project = Project.find id            # returns specific project
 
-*Create project*
+<b>Create project</b>
 
   # Required attribues
   #   :contact_id
@@ -91,30 +91,30 @@ Please note: version 0.2 is significantly different from 0.1 so if you are upgra
   @project = Project.new params
   @project.save
 
-*Update project*
+<b>Update project</b>
 
   @project.name = 'Web design project'
   @project.save
 
-*Delete project*
+<b>Delete project</b>
 
   Project.delete id
   # or
   @project.destroy
 
-*Nested resources*
+<b>Nested resources</b>
 
   @invoices = @project.invoices
   @timeslips = @project.timeslips
 
 === Tasks
 
-*Find tasks*
+<b>Find tasks</b>
 
   @tasks = Task.find :all               # returns all tasks
   @task = Task.find id                  # returns specific task
 
-*Create task*
+<b>Create task</b>
 
   # Required attributes
   #   :name
@@ -122,12 +122,12 @@ Please note: version 0.2 is significantly different from 0.1 so if you are upgra
   @task = Task.new params
   @task.save
 
-*Update task*
+<b>Update task</b>
 
   @task.name = 'Create wireframes'
   @task.save
 
-*Delete task*
+<b>Delete task</b>
 
   Task.delete id
   # or
@@ -135,12 +135,12 @@ Please note: version 0.2 is significantly different from 0.1 so if you are upgra
 
 === Invoices
 
-*Find Invoices*
+<b>Find Invoices</b>
 
   @invoices = Invoice.find :all         # returns all invoices
   @invoice = Invoice.find id            # returns specific invoice
 
-*Create invoice*
+<b>Create invoice</b>
 
   # Required attributes
   #   :contact_id
@@ -152,18 +152,18 @@ Please note: version 0.2 is significantly different from 0.1 so if you are upgra
   @invoice = Invoice.new params
   @invoice.save
 
-*Update invoice*
+<b>Update invoice</b>
 
   @invoice.status = 'Sent'
   @invoice.save
 
-*Delete invoice*
+<b>Delete invoice</b>
 
   Invoice.delete id
   # or
   @invoice.destroy
 
-*Changing status*
+<b>Changing status</b>
 
   @invoice.mark_as_draft
   @invoice.mark_as_sent
@@ -171,12 +171,12 @@ Please note: version 0.2 is significantly different from 0.1 so if you are upgra
 
 === Invoice items
 
-*Find invoice items*
+<b>Find invoice items</b>
 
   @invoice_items = InvoiceItem.find :all  # returns all invoice items
   @invoice_item = InvoiceItem.find id     # returns specific invoice item
 
-*Create invoice item*
+<b>Create invoice item</b>
 
   # Required attributes
   #   :item_type                        # must be Hours, Days, Months, Years, Products, Services, Expenses, Discount, Credit, Comment
@@ -188,12 +188,12 @@ Please note: version 0.2 is significantly different from 0.1 so if you are upgra
   @invoice_item = InvoiceItem.new params
   @invoice_item.save
 
-*Update invoice item*
+<b>Update invoice item</b>
 
   @invoice_item.name = 'Create wireframes'
   @invoice_item.save
 
-*Delete invoice item*
+<b>Delete invoice item</b>
 
   InvoiceItem.delete id
   # or
@@ -201,13 +201,13 @@ Please note: version 0.2 is significantly different from 0.1 so if you are upgra
 
 === Timeslips
 
-*Find timeslips*
+<b>Find timeslips</b>
 
   @timeslips = Timeslip.find :all, :params => {:from => '2009-10-01', :to => '2009-10-30'}
                                         # returns all timeslips (:from and :to dates required)
   @timeslip = Timeslip.find id          # returns specific timeslip
 
-*Create timeslip*
+<b>Create timeslip</b>
 
   # Required attributes
   #   :user_id
@@ -218,12 +218,12 @@ Please note: version 0.2 is significantly different from 0.1 so if you are upgra
   @timeslip = Timeslip.new params
   @timeslip.save
 
-*Update timeslip*
+<b>Update timeslip</b>
 
   @timeslip.hours = '3.5'
   @timeslip.save
 
-*Delete timeslip*
+<b>Delete timeslip</b>
 
   Timeslip.delete id
   # or
