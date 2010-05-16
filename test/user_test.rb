@@ -42,18 +42,34 @@ class UserTest < Test::Unit::TestCase
       assert @user.destroy
     end
   end
-  # 
-  # context "New User" do
-  #   setup do
-  #     params = {
-  #       :project_id => '17820',
-  #       :name       => 'Creative design'
-  #     }
-  #     @task = User.new params
-  #   end
-  #   should "validate and save" do
-  #     assert @task.save_with_validation
-  #   end
-  # end
+  
+  context "Finding User" do
+    setup do
+      @user = User.find_by_email('olly@gmail.com')
+    end
+    should "return a User" do
+      assert @user.is_a? User
+    end
+    should "return the correct User" do
+      assert_equal User.find(11), @user
+    end
+  end
+  
+  context "New User" do
+    setup do
+      params = {
+          :first_name => 'John',
+          :last_name  => 'Doe',
+          :email      => 'jdoe@example.com',
+          :role       => 'Owner',
+          :password   => 'password',
+          :password_confirmation => 'password'
+      }
+      @user = User.new params
+    end
+    should "validate and save" do
+      assert @user.save_with_validation
+    end
+  end
     
 end

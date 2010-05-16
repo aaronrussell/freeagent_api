@@ -115,5 +115,12 @@ module Freeagent
   # Users
   class User < Base
     self.prefix = '/company/'
+    def self.find_by_email(email)
+      users = User.find :all
+      users.each do |u|
+        u.email == email ? (return u) : next
+      end
+      raise Error, "No user matches that email!"
+    end
   end
 end

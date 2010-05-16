@@ -235,14 +235,15 @@ Please note: version 0.2 is significantly different from 0.1 so if you are upgra
 
   @users = User.find :all			  # returns all users
   @user = User.find id          # returns specific user
+	@user = User.find_by_email email
 
 <b>Create user</b>
 
   # Required attributes
-	# 	:first-name
-	# 	:last-name
+	# 	:first_name
+	# 	:last_name
 	# 	:email
-	# 	:role
+	# 	:role										# must be Owner, Director, Partner, Company Secretary, Employee, Shareholder, or Accountant
 	# 	:password
 	# 	:password_confirmation
 
