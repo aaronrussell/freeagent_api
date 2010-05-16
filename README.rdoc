@@ -11,10 +11,10 @@ This supports all GET, POST, PUT and DELETE ActiveResource calls for the followi
 * Invoices
 * Invoice Items
 * Timeslips
+* Users
 
 At the moment, the following API resources are NOT supported (although is being worked on):
 
-* Users
 * Expenses
 * Attachments
 
@@ -229,10 +229,43 @@ Please note: version 0.2 is significantly different from 0.1 so if you are upgra
   # or
   @timeslip.destroy
 
+=== Users
+
+<b>Find users</b>
+
+  @users = User.find :all			  # returns all users
+  @user = User.find id          # returns specific user
+
+<b>Create user</b>
+
+  # Required attributes
+	# 	:first-name
+	# 	:last-name
+	# 	:email
+	# 	:role
+	# 	:password
+	# 	:password_confirmation
+
+
+  @user = User.new params
+  @user.save
+
+<b>Update user</b>
+
+  @user.first_name = '3.5'
+  @user.save
+
+<b>Delete user</b>
+
+  User.delete id
+  # or
+  @user.destroy
+
 == Author
  
 * Aaron Russell - (www.aaronrussell.co.uk)
+* Alex Comans - (www.alexcoomans.com)
 
 == Copyright
 
-Copyright (c) 2009 Aaron Russell. See LICENSE for details.
+Copyright (c) 2010 Aaron Russell & Alex Coomans. See LICENSE for details.

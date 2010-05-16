@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'activeresource'
+require 'active_resource'
 
 module Freeagent
   
@@ -111,5 +111,9 @@ module Freeagent
       end
     end    
   end
-
+  
+  # Users
+  class User < Base
+    self.prefix = '/company/'
+  end
 end

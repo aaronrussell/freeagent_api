@@ -43,6 +43,8 @@ def fake_it_all
     '/timeslips.xml?view=2009-10-01_2009-10-10' => File.join('timeslips', 'find_all'),
     '/timeslips/84445.xml'                      => File.join('timeslips', 'find_single'),
     '/projects/17820/timeslips.xml'             => File.join('projects', 'timeslips'),
+    '/company/users.xml'                        => File.join('users', 'find_all'),
+    '/company/users/11.xml'                     => File.join('users', 'find_single')
   }.each do |path, stub|
     FakeWeb.register_uri(:get, site_url+path, :response => stub_file(stub))
   end
@@ -54,6 +56,7 @@ def fake_it_all
     '/invoices.xml'                     => File.join('http', '201'),
     '/invoices/73867/invoice_items.xml' => File.join('http', '201'),
     '/timeslips.xml'                    => File.join('http', '201'),
+    '/company/users.xml'                => File.join('http', '201')
   }.each do |path, stub|
     FakeWeb.register_uri(:post, site_url+path, :response => stub_file(stub))
   end
@@ -70,6 +73,7 @@ def fake_it_all
     '/invoices/73867/invoice_items/169399.xml'  => File.join('http', '200'),
     '/timeslips/84445.xml'                      => File.join('http', '200'),
     '/timeslips/74814.xml'                      => File.join('http', '200'),
+    '/company/users/11.xml'                     => File.join('http', '200')
   }.each do |path, stub|
     FakeWeb.register_uri(:put, site_url+path, :response => stub_file(stub))
   end
@@ -83,6 +87,7 @@ def fake_it_all
     '/invoices/73867/invoice_items/169399.xml'  => File.join('http', '200'),
     '/timeslips/84445.xml'                      => File.join('http', '200'),
     '/timeslips/74814.xml'                      => File.join('http', '200'),
+    '/company/users/11.xml'                     => File.join('http', '200')
   }.each do |path, stub|
     FakeWeb.register_uri(:delete, site_url+path, :response => stub_file(stub))
   end

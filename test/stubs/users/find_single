@@ -1,0 +1,18 @@
+HTTP/1.1 200 OK
+Status: 200
+Content-Type: application/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?>
+<user>
+  <company-id type="integer">11</company-id>
+  <email>olly@lylo.co.uk</email>
+  <first-name>Olly</first-name>
+  <id type="integer">11</id>
+  <last-logged-in-at type="datetime">2008-03-03T21:16:09Z</last-logged-in-at>
+  <last-name>Headey</last-name>
+  <opening-director-loan-account-balance type="decimal">0.0</opening-director-loan-account-balance>
+  <opening-expense-balance type="decimal">0.0</opening-expense-balance>
+  <opening-salary-balance type="decimal">0.0</opening-salary-balance>
+  <opening-share-or-capital-balance type="decimal">0.0</opening-share-or-capital-balance>
+  <role>Director</role>
+</user>
