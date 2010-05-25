@@ -12,7 +12,7 @@ begin
     gem.authors = ["Aaron Russell"]
     gem.add_development_dependency "thoughtbot-shoulda"
     gem.add_development_dependency "fakeweb"
-    gem.add_dependency "activeresource"
+    gem.add_dependency "activeresource", "< 3.0.0.beta1"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
