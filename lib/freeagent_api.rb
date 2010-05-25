@@ -113,6 +113,7 @@ module Freeagent
   end
   
   # Users
+  
   class User < Base
     self.prefix = '/company/'
     def self.find_by_email(email)
@@ -123,4 +124,5 @@ module Freeagent
       raise Error, "No user matches that email!"
     end
   end
+  
 end

@@ -233,27 +233,26 @@ Please note: version 0.2 is significantly different from 0.1 so if you are upgra
 
 <b>Find users</b>
 
-  @users = User.find :all			  # returns all users
+  @users = User.find :all       # returns all users
   @user = User.find id          # returns specific user
-	@user = User.find_by_email email
+  @user = User.find_by_email email
 
 <b>Create user</b>
 
   # Required attributes
-	# 	:first_name
-	# 	:last_name
-	# 	:email
-	# 	:role										# must be Owner, Director, Partner, Company Secretary, Employee, Shareholder, or Accountant
-	# 	:password
-	# 	:password_confirmation
-
-
+  #   :first_name
+  #   :last_name
+  #   :email
+  #   :role                     # must be Owner, Director, Partner, Company Secretary, Employee, Shareholder, or Accountant
+  #   :password
+  #   :password_confirmation
+  
   @user = User.new params
   @user.save
 
 <b>Update user</b>
 
-  @user.first_name = '3.5'
+  @user.first_name = 'Joe Bloggs'
   @user.save
 
 <b>Delete user</b>
@@ -262,11 +261,11 @@ Please note: version 0.2 is significantly different from 0.1 so if you are upgra
   # or
   @user.destroy
 
-== Author
+== Author & Contributors
  
 * Aaron Russell - (www.aaronrussell.co.uk)
 * Alex Comans - (www.alexcoomans.com)
 
 == Copyright
 
-Copyright (c) 2010 Aaron Russell & Alex Coomans. See LICENSE for details.
+Copyright (c) 2009-2010 Aaron Russell. See LICENSE for details.
