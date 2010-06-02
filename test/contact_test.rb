@@ -43,6 +43,18 @@ class ContactTest < Test::Unit::TestCase
     end
   end
   
+  context "Finding Contact" do
+    setup do
+      @contact = Contact.find_by_name('Organisation Name - Demo')
+    end
+    should "return a Contact" do
+      assert @contact.is_a? Contact
+    end
+    should "return the correct User" do
+      assert_equal Contact.find(27309), @contact
+    end
+  end
+  
   #TODO - Add test for invalid resource
   # Need support from fakeweb in order to achieve this
   

@@ -17,6 +17,7 @@ module Freeagent
       self.site = "https://#{options[:domain]}"
       self.user = options[:username]
       self.password = options[:password]
+      return true
     end
   end
   
@@ -40,6 +41,10 @@ module Freeagent
   # Contacts
   
   class Contact < Base
+    def self.find_by_name(name)
+      Contact.find(:all).each { |c| c.organisation_name == name ? (return c) : next }
+      raise Error, "No contact matches that name!"
+    end
   end
   
   # Projects
@@ -118,10 +123,7 @@ module Freeagent
   class User < Base
     self.prefix = '/company/'
     def self.find_by_email(email)
-      users = User.find :all
-      users.each do |u|
-        u.email == email ? (return u) : next
-      end
+      User.find(:all).each { |u| u.email == email ? (return u) : next }
       raise Error, "No user matches that email!"
     end
   end

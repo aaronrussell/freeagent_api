@@ -18,7 +18,7 @@ Content-Type: application/xml; charset=utf-8
     <last-name>Bloggs</last-name>
     <locale>en</locale>
     <mobile nil="true"></mobile>
-    <organisation-name>Organisation Name</organisation-name>
+    <organisation-name>Organisation Name - Demo</organisation-name>
     <phone-number>01234 567890</phone-number>
     <postcode>BS1 2AW</postcode>
     <region></region>
