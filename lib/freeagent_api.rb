@@ -67,6 +67,19 @@ module Freeagent
     self.prefix = '/projects/:project_id/'        
   end
   
+  # Bills - Complete
+  
+  class Bill < Base
+  
+    # This is the /only/ way to get bills.
+    def self.find_by_date_range(from, to)
+      fromString = from.strftime("%Y-%m-%d")
+      toString = to.strftime("%Y-%m-%d")
+      Bill.find(:all, :params => { :view => "#{fromString}_#{toString}" })
+    end
+    
+  end
+  
   # Invoices - Complete
   
   class Invoice < Base
