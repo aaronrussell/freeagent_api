@@ -45,6 +45,10 @@ module Freeagent
       Contact.find(:all).each { |c| c.organisation_name == name ? (return c) : next }
       raise Error, "No contact matches that name!"
     end
+    
+    def invoices
+      Invoice.find :all, :from => "/contacts/#{id}/invoices.xml"
+    end
   end
   
   # Projects

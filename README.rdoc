@@ -71,6 +71,10 @@ Please note: version 0.2 is significantly different from 0.1 so if you are upgra
   # or
   @contact.destroy
 
+<b>Nested resources</b>
+
+  @invoices = @contact.invoices
+
 === Projects
 
 <b>Find projects</b>
