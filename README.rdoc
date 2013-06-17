@@ -1,3 +1,9 @@
+= DEPRECATED
+
+Please note, this API is out of date, you should of course be using the official Ruby wrapper (https://github.com/fac/freeagent-api-ruby).
+
+The v1 API will be switched off on Monday 29th July 2013, and with it this repository will be taken offline.
+
 = freeagent_api
 
 Simple ActiveResource Ruby wrapper for the Freeagent Central API (http://www.freeagentcentral.com/developers/freeagent-api).
